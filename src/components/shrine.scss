@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Spinnaker&display=swap');
+
+.main-title {
+  font-family: "Spinnaker";
+}
+
+// BACKGROUND
+.background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 70%;
+  margin: 0;
+  padding: 0;
+  animation: back-change 4s linear;
+  animation-fill-mode: forwards;
+  overflow: hidden;
+  
+}
+
+@keyframes back-change {
+  from {
+    background-color: rgb(1, 1, 21);
+  }
+
+  to {
+    background-color: rgb(64, 19, 225);
+  }
+}
+
+.mirror {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 55%;
+  background-color: rgb(22, 22, 66);
+  position: absolute;
+  opacity: 0.995;
+  transform: scaleY(-1);
+  top: 70%;
+  left: 0;
+  filter: blur(1px);
+  overflow: hidden;
+  animation: mirror-bg 4s linear;
+  animation-fill-mode: forwards;
+  clip-path: polygon(0 0, 100% 14%, 100% 100%, 0 100%);
+  z-index: 1;
+}
+
+@keyframes mirror-bg {
+  from {
+    background-color: rgb(0, 0, 0);
+  }
+
+  to {
+    background-color: rgb(30, 10, 117);
+  }
+}
+
+// WAVE
+
+.wave,
+.wave::before,
+.wave::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 250vw;
+  height: 200vw;
+  margin-left: -125vw;
+  transform-origin: 50% 50%;
+  background-color: transparent;
+  border-radius: 38% 42%;
+  box-shadow: inset 0 0 10vw rgba(236, 92, 171, 0.878);
+  animation: spin 16s infinite linear;
+  mix-blend-mode: multiply;
+}
+
+.wave::before {
+  width: 70%;
+  height: 50%;
+  margin-top: -125vw;
+  transform-origin: 49% 51%;
+  border-radius: 40% 38%;
+  box-shadow: inset 0 0 10vw rgba(144, 128, 225, 0.908);
+  animation: spin 13s infinite linear;
+}
+
+.wave::after {
+  width: 90%;
+  height: 80%;
+  margin-top: -125vw;
+  transform-origin: 51% 49%;
+  border-radius: 48% 42%;
+  box-shadow: inset 0 0 10vw rgba(196, 182, 221, 0.999);
+  animation: spin 10s infinite linear;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// SUN
+
+.sun {
+  position: absolute;
+  left: 54%;
+  top: 30%;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  background: orange;
+  box-shadow: 0 0 200px 100px orange, 0 0 60px orange, 0 0 100px yellow,
+    inset 0 0 60px yellow;
+  animation: sun 6.5s linear;
+  animation-fill-mode: forwards;
+  z-index: 1;
+}
+
+@keyframes sun {
+  from {
+    top: 600px;
+  }
+
+  to {
+    top: 130px;
+  }
+}
+
+.sun-mirror {
+  position: absolute;
+  left: 54%;
+  top: 35%;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  background: orange;
+  box-shadow: 0 0 200px 100px orange, 0 0 60px orange, 0 0 100px yellow,
+  inset 0 0 60px yellow;
+  animation: sun-mirror 6.5s linear;
+  animation-fill-mode: forwards;
+  z-index: 1;
+}
+
+@keyframes sun-mirror {
+  from {
+    top: 510px;
+    opacity: 10%;
+  }
+
+  to {
+    top: 90px;
+    opacity: 50%;
+  }
+}
+
+/* SHRINE */
+
+.shrine1 {
+  position: relative;
+  animation: shrine1 6s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes shrine1 {
+  from {
+    top: 450px;
+  }
+  to {
+    top: 150px;
+  }
+}
+
+.shrine2 {
+  position: relative;
+  animation: shrine2 6s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  z-index: 1;
+}
+
+@keyframes shrine2 {
+  from {
+    top: 400px;
+  }
+  to {
+    top: 125px;
+  }
+}
+
+.shrine3 {
+  position: relative;
+  animation: shrine3 6s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes shrine3 {
+  from {
+    top: 450px;
+  }
+  to {
+    top: 150px;
+  }
+}
+
+.shrine-mirror1 {
+  position: relative;
+  left: 7.8%;
+  animation: shrine-mirror1 6s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes shrine-mirror1 {
+  from {
+    top: 530px;
+    opacity: 0%;
+  }
+  to {
+    top: 125px;
+    opacity: 20%;
+  }
+}
+
+.shrine-mirror2 {
+  position: relative;
+  left: 8.6%;
+  top: 5%;
+  animation: shrine-mirror2 6s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  z-index: 2;
+}
+
+@keyframes shrine-mirror2 {
+  from {
+    top: 300px;
+    opacity: 0%;
+  }
+  to {
+    top: 100px;
+    opacity: 30%;
+  }
+}
+
+.shrine-mirror3 {
+  position: relative;
+  left: 8.1%;
+  animation: shrine-mirror3 6s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes shrine-mirror3 {
+  from {
+    top: 530px;
+    opacity: 0%;
+  }
+  to {
+    top: 125px;
+    opacity: 20%;
+  }
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(22, 22, 66);
+  position: absolute;
+  top: 115%;
+  left: 0;
+  overflow: hidden;
+  z-index: 1;
+  clip-path: polygon(0 10%, 100% 2%, 100% 100%, 0 100%);
+}
